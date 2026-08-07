@@ -1,0 +1,8 @@
+# `files` in package.json is the real allowlist; this is a backstop in case a
+# publish ever happens without it.
+test/
+examples/
+.github/
+CONTRIBUTING.md
+CHANGELOG.md
+DONATE.md

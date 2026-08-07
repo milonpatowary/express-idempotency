@@ -1,0 +1,57 @@
+{
+  "name": "express-idempotency",
+  "version": "0.1.0",
+  "description": "Stripe-style idempotency keys for Express. Safe retries for POST/PATCH/PUT/DELETE, with correct behaviour under concurrency. Zero dependencies.",
+  "main": "src/index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:watch": "node --test --watch \"test/*.test.js\"",
+    "test:integration": "node --test \"test/integration/*.test.js\"",
+    "example": "node examples/basic.js"
+  },
+  "keywords": [
+    "express",
+    "idempotency",
+    "idempotency-key",
+    "middleware",
+    "retry",
+    "exactly-once",
+    "payments",
+    "api",
+    "redis",
+    "mongodb"
+  ],
+  "author": "Milon Patowary <support@zexabit.com> (https://zexabit.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milonpatowary/express-idempotency.git"
+  },
+  "bugs": {
+    "url": "https://github.com/milonpatowary/express-idempotency/issues"
+  },
+  "homepage": "https://github.com/milonpatowary/express-idempotency#readme",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/milonpatowary"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

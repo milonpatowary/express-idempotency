@@ -1,0 +1,7 @@
+# Renders the "Sponsor" button at the top of the repository.
+# Remove any line you have not actually set up — a dead sponsor link is worse
+# than no button at all.
+
+github: [milonpatowary]
+ko_fi: milonpatowary
+custom: ['https://github.com/milonpatowary/express-idempotency/blob/main/DONATE.md']
