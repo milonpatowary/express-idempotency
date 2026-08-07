@@ -1,5 +1,5 @@
 {
-  "name": "express-idempotency",
+  "name": "express-idempotency-keys",
   "version": "0.1.0",
   "description": "Stripe-style idempotency keys for Express. Safe retries for POST/PATCH/PUT/DELETE, with correct behaviour under concurrency. Zero dependencies.",
   "main": "src/index.js",

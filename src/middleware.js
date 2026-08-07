@@ -226,7 +226,7 @@ function normalizeOptions (options) {
       ((err, message) => {
         // Quiet by default in tests, loud enough to be findable in production.
         if (process.env.NODE_ENV === 'test') return
-        console.warn(`[express-idempotency] ${message}`, err || '')
+        console.warn(`[express-idempotency-keys] ${message}`, err || '')
       })
   }
 }

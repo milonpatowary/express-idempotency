@@ -1,12 +1,12 @@
-# express-idempotency
+# express-idempotency-keys
 
 **Stripe-style idempotency keys for Express.** Safe retries for `POST`, `PATCH`, `PUT` and
 `DELETE` — correct when two copies of the same request arrive at the same moment, not just when
 they arrive one after the other.
 
 [![CI](https://github.com/milonpatowary/express-idempotency/actions/workflows/ci.yml/badge.svg)](https://github.com/milonpatowary/express-idempotency/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/express-idempotency.svg)](https://www.npmjs.com/package/express-idempotency)
-[![license](https://img.shields.io/npm/l/express-idempotency.svg)](./LICENSE)
+[![npm](https://img.shields.io/npm/v/express-idempotency-keys.svg)](https://www.npmjs.com/package/express-idempotency-keys)
+[![license](https://img.shields.io/npm/l/express-idempotency-keys.svg)](./LICENSE)
 [![zero dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](./package.json)
 
 ```js
@@ -38,11 +38,17 @@ Getting that right is more subtle than a cache lookup, which is what this librar
 ## Install
 
 ```sh
-npm install express-idempotency
+npm install express-idempotency-keys
 ```
 
 Zero runtime dependencies. Node 18+. Works with Express 4 and 5, and with anything else that
 speaks `(req, res, next)`.
+
+> **On the name.** The package is `express-idempotency-keys`; the repository is
+> `express-idempotency`. The shorter npm name belongs to
+> [an unrelated package](https://www.npmjs.com/package/express-idempotency) by the City of
+> Montreal, which solves a similar problem with a different design. This is not a fork of it and
+> shares no code with it.
 
 ---
 
@@ -50,7 +56,7 @@ speaks `(req, res, next)`.
 
 ```js
 const express = require('express')
-const { idempotency, idempotencyErrorHandler, createRedisStore } = require('express-idempotency')
+const { idempotency, idempotencyErrorHandler, createRedisStore } = require('express-idempotency-keys')
 
 const app = express()
 
@@ -205,7 +211,7 @@ Inside a handler, `req.idempotency` gives you `{ key, scope, storeKey, fingerpri
 ### Memory (default)
 
 ```js
-const { createMemoryStore } = require('express-idempotency')
+const { createMemoryStore } = require('express-idempotency-keys')
 idempotency({ store: createMemoryStore() })
 ```
 

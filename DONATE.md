@@ -1,6 +1,6 @@
 # Support this project
 
-`express-idempotency` is free, MIT-licensed, and maintained in spare time. There is no paid tier, no
+`express-idempotency-keys` is free, MIT-licensed, and maintained in spare time. There is no paid tier, no
 "pro" version, and nothing behind a login.
 
 If it saved you real time — or caught a duplicate charge before your customer did — a one-off

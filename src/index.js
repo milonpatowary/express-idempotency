@@ -42,5 +42,5 @@ module.exports = {
   ...errors
 }
 
-// Also allow `const idempotency = require('express-idempotency')`.
+// Also allow `const idempotency = require('express-idempotency-keys')`.
 module.exports.default = module.exports
