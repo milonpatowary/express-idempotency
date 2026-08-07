@@ -6,7 +6,17 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
-## [0.1.0] — unreleased
+## [0.1.1] — unreleased
+
+### Fixed
+
+- `require("express-idempotency-keys/package.json")` threw `ERR_PACKAGE_PATH_NOT_EXPORTED`.
+  An `exports` map blocks every subpath it does not list, and `package.json` was not listed —
+  so the ordinary way of reading a dependency's version failed. Found by installing 0.1.0 from
+  the registry and using it as a consumer would, which is the only place this is visible: it
+  cannot reproduce from inside the repository, where the file is just a relative path.
+
+## [0.1.0] — 2026-08-07
 
 Initial release.
 
@@ -36,5 +46,6 @@ Initial release.
 - TypeScript definitions, including an `Express.Request.idempotency` augmentation.
 - Zero runtime dependencies.
 
-[Unreleased]: https://github.com/milonpatowary/express-idempotency/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/milonpatowary/express-idempotency/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/milonpatowary/express-idempotency/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/milonpatowary/express-idempotency/releases/tag/v0.1.0

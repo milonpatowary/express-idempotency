@@ -1,6 +1,6 @@
 {
   "name": "express-idempotency-keys",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Stripe-style idempotency keys for Express. Safe retries for POST/PATCH/PUT/DELETE, with correct behaviour under concurrency. Zero dependencies.",
   "main": "src/index.js",
   "types": "index.d.ts",
@@ -9,7 +9,8 @@
       "types": "./index.d.ts",
       "require": "./src/index.js",
       "default": "./src/index.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "src",
