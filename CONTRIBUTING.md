@@ -65,10 +65,35 @@ twice, are the ones to look hardest for.
 
 ## Releasing
 
-Maintainer notes:
+Releases are published by CI from a tag. Nobody publishes from a laptop, and no npm token needs to
+exist on anyone's machine.
 
-1. Unit suite green on all supported Node versions.
-2. Integration suite green against real Redis and Mongo.
-3. `CHANGELOG.md` updated.
-4. `npm version <patch|minor|major>`, then `npm publish --provenance`.
-5. Push the tag.
+```sh
+# 1. Update CHANGELOG.md and commit it.
+# 2. Bump, which also commits and tags:
+npm version patch        # or minor / major
+# 3. Push the commit and the tag together:
+git push --follow-tags
+```
+
+The `Release` workflow then runs the unit suite, runs the integration suite against real Redis and
+MongoDB, publishes with `--provenance`, and opens a GitHub Release.
+
+Two guards run before anything is published, because npm versions are immutable and a mistake
+cannot be taken back:
+
+- the tag must match `package.json` version — a `v0.2.0` tag on a `0.1.0` package fails the job
+- the version must not already exist on npm
+
+**Authentication.** The workflow requests an OIDC token, so with [npm Trusted
+Publishing](https://docs.npmjs.com/trusted-publishers) configured for this package no secret is
+needed at all. Trusted publishing is configured on the package's npm settings page, which means the
+package has to exist first — so **the very first release is the exception**: either publish `0.1.0`
+once by hand (`npm login && npm publish --access public`), or set an `NPM_TOKEN` repository secret,
+which the workflow uses as a fallback. After that, switch to trusted publishing and delete the
+secret.
+
+`npm publish` also runs `prepublishOnly`, so the test suite gates a manual publish too.
+
+The package is `express-idempotency-keys`; the repository is `express-idempotency`. See the note in
+the README.
