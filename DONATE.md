@@ -16,16 +16,19 @@ questions and pull requests get the same attention from everyone.
 
 ## Crypto
 
-> [!IMPORTANT]
-> **Setup still required.** The addresses below are placeholders. Replace each one with an address
-> you control and have tested with a small transfer first, or delete this section entirely.
-> Publishing an unverified address means losing anything sent to it.
+> [!WARNING]
+> **Send only the named asset on the named network.** These are per-network addresses. Anything
+> sent on a different network — USDT over TRON to the BNB Smart Chain address, for example — is
+> almost certainly unrecoverable.
 
 | Asset | Network | Address |
 |---|---|---|
-| Bitcoin | BTC | `<REPLACE-WITH-YOUR-BTC-ADDRESS>` |
-| Ethereum | ERC-20 | `<REPLACE-WITH-YOUR-ETH-ADDRESS>` |
-| USDT | TRC-20 | `<REPLACE-WITH-YOUR-TRON-ADDRESS>` |
+| TRX | TRON | `TLVs5cx85cwUCCGV8KujZkh5gDCpxomTd6` |
+| USDT | BNB Smart Chain (BEP-20) | `0x737d85ECF68EAEF3dA5Ac912412D98e721F80ab9` |
+| TON | The Open Network | `UQAKmKyA3_vfYwjwUPa3wiVjr5JIqEsKd_6YDpkT3yhI6g4_` |
+
+The BNB Smart Chain address is an EVM-format address, which means it *looks* valid on Ethereum
+mainnet, Polygon and every other EVM chain. It is not. Only BNB Smart Chain.
 
 **Check the address before you send.** Compare it against the copy on
 [the GitHub repository](https://github.com/milonpatowary/express-idempotency/blob/main/DONATE.md)
