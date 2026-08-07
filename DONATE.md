@@ -24,8 +24,10 @@ questions and pull requests get the same attention from everyone.
 | Asset | Network | Address |
 |---|---|---|
 | TRX | TRON | `TLVs5cx85cwUCCGV8KujZkh5gDCpxomTd6` |
-| USDT | BNB Smart Chain (BEP-20) | `0x737d85ECF68EAEF3dA5Ac912412D98e721F80ab9` |
-| TON | The Open Network | `UQAKmKyA3_vfYwjwUPa3wiVjr5JIqEsKd_6YDpkT3yhI6g4_` |
+| USDT **or** USDC | BNB Smart Chain (BEP-20) | `0x737d85ECF68EAEF3dA5Ac912412D98e721F80ab9` |
+
+USDT and USDC share one address because they are both BEP-20 tokens on the same chain — the address
+identifies the account, not the token. Sending either is fine.
 
 The BNB Smart Chain address is an EVM-format address, which means it *looks* valid on Ethereum
 mainnet, Polygon and every other EVM chain. It is not. Only BNB Smart Chain.
